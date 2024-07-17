@@ -1,5 +1,12 @@
-<script setup>
-const paths = ref([
+<script setup lang="ts">
+import { ref } from 'vue';
+
+interface PathItem {
+    path: string;
+    name: string;
+}
+
+const paths = ref<PathItem[]>([
     {
         path: 'about',
         name: 'About'

@@ -1,5 +1,9 @@
-<script setup>
-const { product } = defineProps(['product']);
+<script setup lang="ts">
+import type { ProductI } from '@/types/types';
+
+defineProps<{
+    product: ProductI;
+}>();
 </script>
 
 <template>
@@ -28,7 +32,3 @@ const { product } = defineProps(['product']);
         </v-card-actions>
     </v-card>
 </template>
-
-<style scoped>
-
-</style>

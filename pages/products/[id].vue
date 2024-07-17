@@ -1,7 +1,12 @@
-<script setup>
-const { id } = useRoute().params;
+<script setup lang="ts">
+import { useRoute } from 'vue-router';
+import axios from 'axios';
 
-const { data: product } = await useFetch(`https://fakestoreapi.com/products/${id}`);
+import type { ProductI } from '@/types/types';
+
+const { id } = useRoute().params as { id: string };
+
+const { data: product } = await axios.get<ProductI>(`https://fakestoreapi.com/products/${id}`);
 </script>
 
 <template>
